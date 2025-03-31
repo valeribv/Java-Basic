@@ -15,7 +15,7 @@ public class WeekendOrWorkingDay {
                 System.out.println("Working day");
                 break;
             case "Saturday":
-            case " Sunday":
+            case "Sunday":
                 System.out.println("Weekend");
                 break;
         }
