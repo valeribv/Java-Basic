@@ -10,6 +10,8 @@ public class Cinema {
         double rows = Double.parseDouble(scanner.nextLine());
         double price = 0;
 
+        // switch case*
+
 //        switch (cinemaType){
 //            case "Premiere":
 //                price = colum * rows;
@@ -25,9 +27,10 @@ public class Cinema {
 //                break;
 //            default: System.out.println("error");
 
+            // if case*
         if (cinemaType.equals("Premiere")) {
             price = (colum * rows) * 12;
-            System.out.printf("%.2f" , price);
+            System.out.printf("%.2f", price);
             System.out.println(" leva");
         } else if (cinemaType.equals("Normal")) {
             price = (colum * rows) * 7.5;
