@@ -5,27 +5,42 @@ public class OnTimeForTheExam {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        int examHour = Integer.parseInt(scanner.nextLine());
+        int examMinutes = Integer.parseInt(scanner.nextLine());
+        int arrivalHour = Integer.parseInt(scanner.nextLine());
+        int arrivalMinutes = Integer.parseInt(scanner.nextLine());
 
-        double examHour = Double.parseDouble(scanner.nextLine());
-        double examMinutes = Double.parseDouble(scanner.nextLine());
-        double arrivalHour = Double.parseDouble(scanner.nextLine());
-        double arrivalMinutes = Double.parseDouble(scanner.nextLine());
+        int examHoursToMinutes = examHour * 60 + examMinutes;
+        int arrivalHoursToMinutes = arrivalHour * 60 + arrivalMinutes;
 
-        double examHoursToMinutes = examHour / 60;
+        int difference =  arrivalHoursToMinutes - examHoursToMinutes;
+        int hours = 0;
+        int minutes = 0;
 
-
-        //on time
-        if (examHour == arrivalHour && examMinutes >= arrivalMinutes) {
-            System.out.println("On time");
-
-            //late
-        } else if (examHour < arrivalHour) {
+        if (difference > 0) {
             System.out.println("Late");
-
-            //Early
-        } else if (examHoursToMinutes > arrivalHour)
-            if (arrivalMinutes > examMinutes - 30)
-                System.out.println("Early");
-
+            if (difference < 60) {
+                System.out.printf("%d minutes after the start%n", difference);
+            } else {
+                hours = difference / 60;
+                minutes = difference % 60;
+                System.out.printf("%d:%02d hours after the start%n", hours, minutes);
+            }
+        } else if (difference == 0 || difference >= -30) {
+            System.out.println("On time");
+            if (difference != 0) {
+                System.out.printf("%d minutes before the start%n", Math.abs(difference));
+            }
+        } else {
+            System.out.println("Early");
+            if (Math.abs(difference) < 60) {
+                System.out.printf("%d minutes before the start%n", Math.abs(difference));
+            } else {
+                hours = Math.abs(difference) / 60;
+                minutes = Math.abs(difference) % 60;
+                System.out.printf("%d:%02d hours before the start%n", hours, minutes);
+            }
+        }
     }
 }
+
