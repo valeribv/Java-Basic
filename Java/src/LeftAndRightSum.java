@@ -6,7 +6,6 @@ public class LeftAndRightSum {
 
         Scanner scanner = new Scanner(System.in);
 
-
         int number = Integer.parseInt(scanner.nextLine());
         int numberLeftOne = Integer.parseInt(scanner.nextLine());
         int numberLeftTwo = Integer.parseInt(scanner.nextLine());
@@ -17,7 +16,6 @@ public class LeftAndRightSum {
         int leftSide = numberLeftOne + numberLeftTwo;
         int rightSide = numberRightOne + numberRightTwo;
         int sum = leftSide + rightSide;
-
 
         if (leftSide == rightSide) {
             System.out.println("Yes, sum = 100");
