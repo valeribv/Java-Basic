@@ -6,23 +6,24 @@ public class LeftAndRightSum {
 
         Scanner scanner = new Scanner(System.in);
 
-        int number = Integer.parseInt(scanner.nextLine());
-        int numberLeftOne = Integer.parseInt(scanner.nextLine());
-        int numberLeftTwo = Integer.parseInt(scanner.nextLine());
+        int quantityOfNumbers = Integer.parseInt(scanner.nextLine());
 
-        int numberRightOne = Integer.parseInt(scanner.nextLine());
-        int numberRightTwo = Integer.parseInt(scanner.nextLine());
+        int sumLeft = 0;
+        int sumRight = 0;
 
-        int leftSide = numberLeftOne + numberLeftTwo;
-        int rightSide = numberRightOne + numberRightTwo;
-        int sum = leftSide + rightSide;
-
-        if (leftSide == rightSide) {
-            System.out.println("Yes, sum = 100");
-        } else if (leftSide > rightSide) {
-            System.out.printf("No, diff = %d", Math.abs(leftSide - rightSide));
+        for (int index = 1; index <= quantityOfNumbers; index++) {
+            int inputNumber = Integer.parseInt(scanner.nextLine());
+            sumLeft += inputNumber;
+        }
+        for (int j = 1; j <= quantityOfNumbers; j++) {
+            int rightNumber = Integer.parseInt(scanner.nextLine());
+            sumRight += rightNumber;
+        }
+        if (sumLeft == sumRight) {
+            System.out.printf("Yes, sum = " + sumLeft);
         } else {
-            System.out.printf("No, diff = %d", Math.abs(leftSide - rightSide));
+            int diff = Math.abs(sumLeft - sumRight);
+            System.out.printf("No, diff = " + diff);
         }
     }
 }

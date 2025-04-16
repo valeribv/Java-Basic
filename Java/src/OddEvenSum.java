@@ -6,7 +6,6 @@ public class OddEvenSum {
 
         Scanner scanner = new Scanner(System.in);
 
-
         int quantityOfNumbers = Integer.parseInt(scanner.nextLine());
 
         //Variables for construction
