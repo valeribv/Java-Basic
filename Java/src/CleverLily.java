@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class CleverLily {
-
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -27,8 +26,8 @@ public class CleverLily {
             }
         }
         toyTotalPrice = quantityToys * toyPrice;
-
         totalPrice = (totalPrice + toyTotalPrice) - brother;
+
         if (totalPrice >= washingMachine) {
             System.out.printf("Yes! %.2f", (totalPrice - washingMachine));
         } else {
