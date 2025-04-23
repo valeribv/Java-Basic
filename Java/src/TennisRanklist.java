@@ -28,7 +28,7 @@ public class TennisRanklist {
             }
         }
         System.out.printf("Final points: %.0f%n", sumAllPoints + pointsInRankList);
-        System.out.printf("Average points: %.0f%n", sumAllPoints / inputCompetitions);
+        System.out.printf("Average points: %.0f%n", Math.floor(sumAllPoints / inputCompetitions));
         System.out.printf("%.2f%%", (win / inputCompetitions) * 100);
     }
 }
